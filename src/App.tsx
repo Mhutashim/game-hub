@@ -22,12 +22,10 @@ function App() {
 
       <Show above="lg" /* below="" */>
         {/* this will only show in lg screen and higher display */}
-        <GridItem area="aside" bg="gold">
-          Aside
-        </GridItem>
+        <GridItem area="aside">Aside</GridItem>
       </Show>
 
-      <GridItem area="main" bg="dodgerblue">
+      <GridItem area="main">
         <GameGrid></GameGrid>
       </GridItem>
     </Grid>
