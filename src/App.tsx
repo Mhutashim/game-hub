@@ -7,6 +7,7 @@ import {
   Show,
 } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
+import GameGrid from "./components/GameGrid";
 function App() {
   return (
     <Grid
@@ -18,6 +19,7 @@ function App() {
       <GridItem area="nav">
         <NavBar></NavBar>
       </GridItem>
+
       <Show above="lg" /* below="" */>
         {/* this will only show in lg screen and higher display */}
         <GridItem area="aside" bg="gold">
@@ -26,7 +28,7 @@ function App() {
       </Show>
 
       <GridItem area="main" bg="dodgerblue">
-        Main
+        <GameGrid></GameGrid>
       </GridItem>
     </Grid>
   );
