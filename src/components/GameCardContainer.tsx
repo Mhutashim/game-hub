@@ -1,0 +1,19 @@
+import { Box } from "@chakra-ui/react";
+import React, { ReactNode } from "react";
+
+interface Props {
+  children: ReactNode;
+}
+
+const GameCardContainer = ({ children }: Props) => {
+  // <Box> is Chakra UI component which returns div
+
+  // here, we will be giving a default size of the box in which the cards will be rendered
+  return (
+    <Box width="300px" borderRadius={10} overflow="hidden">
+      {children}
+    </Box>
+  );
+};
+
+export default GameCardContainer;

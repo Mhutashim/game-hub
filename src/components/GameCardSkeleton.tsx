@@ -9,7 +9,7 @@ import React from "react";
 
 const GameCardSkeleton = () => {
   return (
-    <Card width="300px" borderRadius={10} overflow="hidden">
+    <Card>
       {/* <Skeleton> is a placeholder for image with arbitrary/random height*/}
       <Skeleton height="200px"></Skeleton>
       <CardBody>
