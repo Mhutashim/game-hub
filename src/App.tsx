@@ -16,6 +16,11 @@ function App() {
         base: `"nav" " main"`,
         lg: `"nav nav" "aside main"`, // equal or larger than ~992px
       }}
+      // To ensure the gamegrid stretchs while the aside panel remains the same
+      templateColumns={{
+        base: "1fr",
+        lg: "200px 1fr", // first column (aside panel) will get 200px and the remaing game grid then rest of the space
+      }}
     >
       <GridItem area="nav">
         <NavBar></NavBar>
@@ -23,7 +28,9 @@ function App() {
 
       <Show above="lg" /* below="" */>
         {/* this will only show in lg screen and higher display */}
-        <GenreList></GenreList>
+        <GridItem area="aside" paddingX={5}>
+          <GenreList></GenreList>
+        </GridItem>
       </Show>
 
       <GridItem area="main">

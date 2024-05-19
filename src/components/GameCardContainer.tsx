@@ -10,7 +10,7 @@ const GameCardContainer = ({ children }: Props) => {
 
   // here, we will be giving a default size of the box in which the cards will be rendered
   return (
-    <Box width="300px" borderRadius={10} overflow="hidden">
+    <Box borderRadius={10} overflow="hidden">
       {children}
     </Box>
   );
