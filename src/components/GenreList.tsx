@@ -3,7 +3,7 @@ import useGenres, { Genre } from "../hooks/useGenres";
 import useData from "../hooks/useData";
 
 const GenreList = () => {
-  const { data, error, isLoading } = useGenres();
+  const { data, error, isLoading } = useGenres(); //via useData
 
   return (
     <div>
