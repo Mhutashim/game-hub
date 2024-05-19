@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 function App() {
   return (
     <Grid
@@ -22,7 +23,7 @@ function App() {
 
       <Show above="lg" /* below="" */>
         {/* this will only show in lg screen and higher display */}
-        <GridItem area="aside">Aside</GridItem>
+        <GenreList></GenreList>
       </Show>
 
       <GridItem area="main">
