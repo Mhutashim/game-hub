@@ -9,7 +9,12 @@ import {
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import { useState } from "react";
+import { Genre } from "./hooks/useGenres";
 function App() {
+  // Selected Genra
+  const [seletedGenre, setSelectedGenre] = useState<Genre | null>(null); //can be either genre obj or null
+
   return (
     <Grid
       templateAreas={{
@@ -29,12 +34,14 @@ function App() {
       <Show above="lg" /* below="" */>
         {/* this will only show in lg screen and higher display */}
         <GridItem area="aside" paddingX={5}>
-          <GenreList></GenreList>
+          <GenreList
+            onSelectGenre={(genre) => setSelectedGenre(genre)}
+          ></GenreList>
         </GridItem>
       </Show>
 
       <GridItem area="main">
-        <GameGrid></GameGrid>
+        <GameGrid selectedGenre={seletedGenre}></GameGrid>
       </GridItem>
     </Grid>
   );
