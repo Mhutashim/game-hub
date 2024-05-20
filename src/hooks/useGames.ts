@@ -15,7 +15,15 @@ export interface Game {
   metacritic: number
 }
 
-const useGames = (selectedGenre: Genre | null) => useData<Game>('/games',{params: {genres:selectedGenre?.id}}, [selectedGenre?.id])
+const useGames = (selectedGenre: Genre | null, selectedPlatform:Platform |null) => useData<Game>(
+  '/games',
+  {
+    params: 
+      { genres:selectedGenre?.id, platforms:selectedPlatform?.id
+    }
+  }, 
+  [selectedGenre?.id,selectedPlatform?.id]
+)
 // Here, added the param which is a AxiosRequestConfig obj that takes value as a quary string parameter.
 // selectedGenre?.id is used as this is optional
 // here we will be quary the genre based on id. Cz, the API allowed id wise filter.
