@@ -3,6 +3,7 @@ import {
   ButtonGroup,
   Grid,
   GridItem,
+  HStack,
   PopoverArrow,
   Show,
 } from "@chakra-ui/react";
@@ -13,6 +14,7 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
+import SortSelector from "./components/SortSelector";
 
 //Refactoring by adding Query object pattern - The Query Object pattern is a design pattern used to manage database queries in software applications.
 //Query Object pattern simplifies query construction, improves code organization, and enhances maintainability. It’s a powerful tool for managing database queries effectively!
@@ -62,14 +64,18 @@ function App() {
       </Show>
 
       <GridItem area="main">
-        <PlatformSelector
-          // selectedPlatform={selectedPlatform} -old
-          selectedPlatform={gameQuery.platform}
-          // onSelectPlatform={(platform) => setSelectedPlatform(platform)} -old
-          onSelectedPlatform={(platform) =>
-            setGameQuery({ ...gameQuery, platform })
-          }
-        ></PlatformSelector>
+        <HStack spacing={5} paddingLeft={2} marginBottom={5}>
+          <PlatformSelector
+            // selectedPlatform={selectedPlatform} -old
+            selectedPlatform={gameQuery.platform}
+            // onSelectPlatform={(platform) => setSelectedPlatform(platform)} -old
+            onSelectedPlatform={(platform) =>
+              setGameQuery({ ...gameQuery, platform })
+            }
+          ></PlatformSelector>
+          <SortSelector></SortSelector>
+        </HStack>
+
         <GameGrid
           // selectedGenre={selectedGenre}
           // selectedPlatform={selectedPlatform}
