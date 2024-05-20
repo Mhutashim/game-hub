@@ -1,3 +1,4 @@
+import { GameQuery } from "../App";
 import useData from "./useData";
 import { Genre } from "./useGenres";
 
@@ -15,14 +16,17 @@ export interface Game {
   metacritic: number
 }
 
-const useGames = (selectedGenre: Genre | null, selectedPlatform:Platform |null) => useData<Game>(
+// const useGames = (selectedGenre: Genre | null, selectedPlatform:Platform |null) => useData<Game>(
+const useGames = (gameQuery:GameQuery) => useData<Game>(
   '/games',
   {
     params: 
-      { genres:selectedGenre?.id, platforms:selectedPlatform?.id
+      // { genres:selectedGenre?.id, platforms:selectedPlatform?.id
+      { genres:gameQuery.genre?.id, platforms:gameQuery.platform?.id
     }
   }, 
-  [selectedGenre?.id,selectedPlatform?.id]
+  // [selectedGenre?.id,selectedPlatform?.id]
+  [gameQuery] // if any value of gameQuery changes then it will re-render
 )
 // Here, added the param which is a AxiosRequestConfig obj that takes value as a quary string parameter.
 // selectedGenre?.id is used as this is optional
