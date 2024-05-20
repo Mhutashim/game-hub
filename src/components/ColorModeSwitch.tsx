@@ -13,7 +13,11 @@ const ColorModeSwitch = () => {
         onChange={toggleColorMode} //built-in function to change color
       ></Switch>
       {/* if the current mode is dark then the switch will be checked */}
-      <Text> {colorMode === "dark" ? "Dark Mode" : "Light Mode"}</Text>
+      {/* nowrap means the text will be on the same line even if the aspect retio changes */}
+      <Text whiteSpace="nowrap">
+        {/* {colorMode === "dark" ? "Dark Mode" : "Light Mode"} */}
+        Dark Mode
+      </Text>
     </HStack>
   );
 };
