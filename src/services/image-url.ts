@@ -1,9 +1,10 @@
 /* This function will make the cropped url from the original url. 
 as the API supports image crop on the fly */
+import noImage from '../assets/no-image-placeholder.webp'
 
 const getCroppedImageUrl = (url : string) => {
 
-  if (!url) return null;
+  if (!url) return noImage;
   const target = 'media/' //for readability
   //finding the target's index 
   const index = url.indexOf(target) + target.length ; //to get the index till media/ as "/" in comon in http
