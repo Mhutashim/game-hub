@@ -22,6 +22,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   order: string;
+  searchText: string;
   //didn't named selectedGenre, selectedPlatform cz it's repeatitive
 }
 
@@ -49,7 +50,9 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar></NavBar>
+        <NavBar
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        ></NavBar>
       </GridItem>
 
       <Show above="lg" /* below="" */>
