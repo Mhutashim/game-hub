@@ -18,15 +18,15 @@ interface Props {
 }
 
 const GenreList = ({ onSelectGenre, selectGenre }: Props) => {
-  const { data, error, isLoading } = useGenres(); //via useData
+  const { data, error, isLoading } = useGenres(); //via useData - now made static
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
     <div>
-      {/* if there is error show nothing */}
+      {/* if there is error show nothing - not needed now Cz static data */}
       {error && null}
 
-      {/* While is loading */}
+      {/* While is loading - not needed now Cz static data*/}
       {isLoading && <Spinner></Spinner>}
       {isLoading &&
         skeletons.map((skeleton) => (
